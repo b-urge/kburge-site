@@ -15,20 +15,15 @@ export default function Home() {
         <ol>
           <li>
             <span className="mono">1</span>
-            <span>Filter by discipline. Hover a title to preview it, click to open it.</span>
+            <span>Pick a category to narrow the list.</span>
           </li>
           <li>
             <span className="mono">2</span>
-            <span>
-              Courses run in your browser. Turn sound on and use the player&rsquo;s Next button. Best on
-              a laptop.
-            </span>
+            <span>Click a title to open the project.</span>
           </li>
           <li>
             <span className="mono">3</span>
-            <span>
-              Apps open in a new tab. Videos play on the page. Documents open as PDFs.
-            </span>
+            <span>Courses have sound, so turn your volume up.</span>
           </li>
         </ol>
       </section>
