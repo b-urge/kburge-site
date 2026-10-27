@@ -1,4 +1,3 @@
-import { HiringDoors } from "@/components/HiringDoors";
 import { WorkIndex } from "@/components/WorkIndex";
 
 export default function Home() {
@@ -16,7 +15,7 @@ export default function Home() {
         <ol>
           <li>
             <span className="mono">1</span>
-            <span>Pick a category to narrow the list.</span>
+            <span>Pick the kind of role you&rsquo;re hiring for, or browse everything.</span>
           </li>
           <li>
             <span className="mono">2</span>
@@ -30,8 +29,6 @@ export default function Home() {
       </section>
 
       <WorkIndex />
-
-      <HiringDoors />
 
       <section id="about" className="about" aria-labelledby="about-title">
         <h2 id="about-title" className="mono">

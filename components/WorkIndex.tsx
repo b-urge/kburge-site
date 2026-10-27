@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { disciplines, projects, type Discipline } from "@/data/projects";
+import { disciplines, formatOf, projects, type Discipline } from "@/data/projects";
 
 type Filter = "All" | Discipline;
 
@@ -40,8 +40,8 @@ export function WorkIndex() {
         <div className="row row-head" aria-hidden="true">
           <span>No.</span>
           <span>Title</span>
-          <span className="discipline">Discipline</span>
-          <span className="context">Context</span>
+          <span className="discipline">Category</span>
+          <span className="context">Format</span>
         </div>
         <div className={`rows${hovered ? " is-hovering" : ""}`} onMouseLeave={() => setHovered(null)}>
           {visible.map((p) => (
@@ -55,7 +55,7 @@ export function WorkIndex() {
               <span className="mono">{p.no}</span>
               <span className="title">{p.title}</span>
               <span className="discipline">{p.discipline}</span>
-              <span className="context">{p.context}</span>
+              <span className="context">{formatOf(p)}</span>
             </Link>
           ))}
         </div>
@@ -73,7 +73,7 @@ export function WorkIndex() {
           </div>
           <div className="preview-meta mono">
             <span>{current.no}</span>
-            <span>{current.discipline}</span>
+            <span>{current.context}</span>
           </div>
           <p>{current.summary}</p>
         </aside>

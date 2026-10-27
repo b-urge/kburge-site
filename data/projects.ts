@@ -1,8 +1,7 @@
 export type Discipline =
   | "Instructional Design"
-  | "Interactive App"
-  | "Explainer Video"
-  | "Documentation"
+  | "Developer Education"
+  | "Enablement"
   | "Hardware & AI";
 
 export type Project = {
@@ -27,24 +26,36 @@ export type Project = {
 
 export const disciplines: Discipline[] = [
   "Instructional Design",
-  "Interactive App",
-  "Explainer Video",
-  "Documentation",
+  "Developer Education",
+  "Enablement",
   "Hardware & AI",
 ];
 
+/** What the thing is, in plain words, from how it's viewed. */
+export function formatOf(p: Project) {
+  return {
+    course: "E-learning course",
+    app: "Web app",
+    video: "Video",
+    document: "PDF",
+    build: "GitHub project",
+  }[p.view.kind];
+}
+
 export const projects: Project[] = [
   {
-    slug: "ayla-service-apis-node-red",
-    title: "Introduction to the Ayla Service APIs using Node-RED",
+    slug: "what-is-search",
+    title: "What Is Search?",
     discipline: "Instructional Design",
     context: "E-learning course",
     summary:
-      "A course on using an IoT platform's custom APIs inside Node-RED, the visual programming tool.",
-    notes: ["I narrated the audio. The course template already existed."],
-    tools: ["Storyline", "Camtasia", "Adobe Audition", "Node-RED"],
-    // image: "/images/node-red.jpg",
-    view: { kind: "course", url: "https://katiebucket.s3.amazonaws.com/story_html5.html" },
+      "What happens between typing a term into a search engine and getting results, and how a database answers.",
+    tools: ["Storyline", "Camtasia", "Adobe Audition", "Photoshop"],
+    // image: "/images/what-is-search.jpg",
+    view: {
+      kind: "course",
+      url: "https://katiebucket.s3.amazonaws.com/What+is+Search+Remix+2/story.html",
+    },
   },
   {
     slug: "creating-an-expense-report",
@@ -77,23 +88,9 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: "what-is-search",
-    title: "What Is Search?",
-    discipline: "Instructional Design",
-    context: "E-learning course",
-    summary:
-      "What happens between typing a term into a search engine and getting results, and how a database answers.",
-    tools: ["Storyline", "Camtasia", "Adobe Audition", "Photoshop"],
-    // image: "/images/what-is-search.jpg",
-    view: {
-      kind: "course",
-      url: "https://katiebucket.s3.amazonaws.com/What+is+Search+Remix+2/story.html",
-    },
-  },
-  {
     slug: "the-listener",
     title: "The Listener",
-    discipline: "Interactive App",
+    discipline: "Instructional Design",
     context: "Radio spectrum explorer",
     summary:
       "Tune across the radio spectrum and see what lives at each frequency, from broadcast and voice to data and amateur radio, with plain explanations of how those signals travel.",
@@ -104,7 +101,7 @@ export const projects: Project[] = [
   {
     slug: "open-bands",
     title: "Open Bands",
-    discipline: "Interactive App",
+    discipline: "Instructional Design",
     context: "Live amateur radio visualization",
     summary:
       "Amateur radio activity in real time, shown through motion, color, and abstract forms instead of call signs and logs, so newcomers can see bands open, go quiet, and connect distant places.",
@@ -114,9 +111,21 @@ export const projects: Project[] = [
     view: { kind: "app", url: "https://v0-open-bands-visualization.vercel.app/" },
   },
   {
+    slug: "ayla-service-apis-node-red",
+    title: "Introduction to the Ayla Service APIs using Node-RED",
+    discipline: "Developer Education",
+    context: "E-learning course",
+    summary:
+      "A course on using an IoT platform's custom APIs inside Node-RED, the visual programming tool.",
+    notes: ["I narrated the audio. The course template already existed."],
+    tools: ["Storyline", "Camtasia", "Adobe Audition", "Node-RED"],
+    // image: "/images/node-red.jpg",
+    view: { kind: "course", url: "https://katiebucket.s3.amazonaws.com/story_html5.html" },
+  },
+  {
     slug: "hamlib-api-playground",
     title: "Hamlib API Playground",
-    discipline: "Interactive App",
+    discipline: "Developer Education",
     context: "API sandbox",
     summary:
       "How modern software controls radio hardware, explained through a web API you can try, connecting traditional radio with software culture.",
@@ -125,32 +134,9 @@ export const projects: Project[] = [
     view: { kind: "app", url: "https://v0-hamlib-api-documentation.vercel.app/" },
   },
   {
-    slug: "ayla-iot-platform-overview",
-    title: "Ayla IoT Platform Extended Overview",
-    discipline: "Explainer Video",
-    context: "3.5-minute product video",
-    summary:
-      "A complex enterprise IoT platform turned into a clear story for technical and executive viewers: how connected products and cloud infrastructure support business growth.",
-    tools: ["Premiere Pro", "After Effects", "Photoshop", "Adobe Audition"],
-    // image: "/images/ayla-overview.jpg",
-    view: { kind: "video", youtubeId: "qmMH4I_RVno" },
-  },
-  {
-    slug: "optimizing-truck-rolls",
-    title: "Optimizing Truck Rolls",
-    discipline: "Explainer Video",
-    context: "2-minute explainer",
-    summary:
-      "How an IoT platform helps industrial companies with connected devices cut the time and cost of sending technicians into the field.",
-    notes: ["I narrated the audio."],
-    tools: ["After Effects", "Adobe Audition", "Photoshop"],
-    // image: "/images/truck-rolls.jpg",
-    view: { kind: "video", youtubeId: "tf02hk0VtZw" },
-  },
-  {
     slug: "dss-api-specification-guide",
     title: "Data Stream Service API Specification Guide",
-    discipline: "Documentation",
+    discipline: "Developer Education",
     context: "Technical writing",
     summary:
       "Specification of the REST APIs for creating, updating, and deleting data subscriptions on the Ayla IoT platform.",
@@ -162,7 +148,7 @@ export const projects: Project[] = [
   {
     slug: "msp-sales-enablement-plan",
     title: "MSP Sales Enablement Performance Plan",
-    discipline: "Documentation",
+    discipline: "Enablement",
     context: "Enablement plan",
     summary:
       "A sales enablement initiative for managed service providers: the needs identified, the training design approach, sample content, and the rollout plan.",
@@ -172,6 +158,29 @@ export const projects: Project[] = [
     tools: ["Performance consulting", "Presentation"],
     // image: "/images/msp-sales.jpg",
     view: { kind: "document", driveId: "13N1ApzhBl9uLXFByfOVPWIE_VkNbYY4p" },
+  },
+  {
+    slug: "ayla-iot-platform-overview",
+    title: "Ayla IoT Platform Extended Overview",
+    discipline: "Enablement",
+    context: "3.5-minute product video",
+    summary:
+      "A complex enterprise IoT platform turned into a clear story for technical and executive viewers: how connected products and cloud infrastructure support business growth.",
+    tools: ["Premiere Pro", "After Effects", "Photoshop", "Adobe Audition"],
+    // image: "/images/ayla-overview.jpg",
+    view: { kind: "video", youtubeId: "qmMH4I_RVno" },
+  },
+  {
+    slug: "optimizing-truck-rolls",
+    title: "Optimizing Truck Rolls",
+    discipline: "Enablement",
+    context: "2-minute explainer",
+    summary:
+      "How an IoT platform helps industrial companies with connected devices cut the time and cost of sending technicians into the field.",
+    notes: ["I narrated the audio."],
+    tools: ["After Effects", "Adobe Audition", "Photoshop"],
+    // image: "/images/truck-rolls.jpg",
+    view: { kind: "video", youtubeId: "tf02hk0VtZw" },
   },
   {
     slug: "freshfridge",
