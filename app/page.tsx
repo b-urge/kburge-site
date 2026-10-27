@@ -4,8 +4,8 @@ export default function Home() {
   return (
     <>
       <h1 className="hero">
-        I make technical things easier to learn. Interactive applications, courses, documentation,
-        explainer videos, and occasional experiments with hardware.
+        I make technical things easier to learn through interactive applications, courses,
+        documentation, and explainer videos. I&rsquo;m also a builder who experiments with hardware.
       </h1>
 
       <section className="howto" aria-labelledby="howto-title">
@@ -62,6 +62,13 @@ export default function Home() {
             <a href="https://github.com/b-urge/Blase-Plaza-Archives">Blase Plaza Archives</a>
           </div>
         </div>
+        <figure className="portrait">
+          <picture>
+            <source srcSet="/images/portrait-still.jpg" media="(prefers-reduced-motion: reduce)" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/portrait.webp" alt="Engraved portrait of Katherine Burge" width={400} height={400} />
+          </picture>
+        </figure>
       </section>
     </>
   );

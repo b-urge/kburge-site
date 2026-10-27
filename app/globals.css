@@ -229,7 +229,7 @@ button:focus-visible {
 
 .about {
   display: grid;
-  grid-template-columns: 160px minmax(0, 1fr);
+  grid-template-columns: 160px minmax(0, 1fr) 280px;
   gap: 24px;
   padding-top: 40px;
   border-top: 1px solid var(--rule);
@@ -237,6 +237,16 @@ button:focus-visible {
 .about h2 {
   margin: 0;
   font-weight: 400;
+}
+.portrait {
+  margin: 0;
+  align-self: start;
+  background: #000;
+}
+.portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 .about-body {
   display: flex;
@@ -424,6 +434,10 @@ button:focus-visible {
   }
   .hero {
     font-size: 32px;
+  }
+  .portrait {
+    max-width: 240px;
+    order: -1;
   }
   .howto,
   .about,
