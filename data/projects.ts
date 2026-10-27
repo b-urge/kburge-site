@@ -167,7 +167,7 @@ export const projects: Project[] = [
     summary:
       "A complex enterprise IoT platform turned into a clear story for technical and executive viewers: how connected products and cloud infrastructure support business growth.",
     tools: ["Premiere Pro", "After Effects", "Photoshop", "Adobe Audition"],
-    // image: "/images/ayla-overview.jpg",
+    image: "https://i.ytimg.com/vi/qmMH4I_RVno/hqdefault.jpg",
     view: { kind: "video", youtubeId: "qmMH4I_RVno" },
   },
   {
@@ -179,7 +179,7 @@ export const projects: Project[] = [
       "How an IoT platform helps industrial companies with connected devices cut the time and cost of sending technicians into the field.",
     notes: ["I narrated the audio."],
     tools: ["After Effects", "Adobe Audition", "Photoshop"],
-    // image: "/images/truck-rolls.jpg",
+    image: "https://i.ytimg.com/vi/tf02hk0VtZw/hqdefault.jpg",
     view: { kind: "video", youtubeId: "tf02hk0VtZw" },
   },
   {
@@ -190,6 +190,7 @@ export const projects: Project[] = [
     summary:
       "An ordinary fridge retrofitted into a smart inventory system with an ESP32-CAM, a Raspberry Pi, Gemini Vision, and a swarm of Google ADK agents.",
     tools: ["ESP32-CAM", "Raspberry Pi", "Gemini Vision", "Google ADK"],
+    image: "https://i.ytimg.com/vi/oZljbCxnYxU/hqdefault.jpg",
     view: { kind: "build", repo: "https://github.com/b-urge/freshfridge", youtubeId: "oZljbCxnYxU" },
   },
   {
