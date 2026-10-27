@@ -4,14 +4,16 @@ export default function Home() {
   return (
     <>
       <h1 className="hero">
-        I make technical things easier to learn through interactive applications, courses,
-        documentation, and explainer videos. I&rsquo;m also a builder who experiments with hardware.
+        I&rsquo;m a builder who makes technical things easier to learn: interactive applications,
+        courses, documentation, and explainer videos.
       </h1>
 
-      <section className="howto" aria-labelledby="howto-title">
+      <section id="work" className="howto" aria-labelledby="howto-title">
         <h2 id="howto-title" className="mono">
-          How to browse
+          Work samples
         </h2>
+        <div>
+        <p className="howto-lead">Browse my work samples below.</p>
         <ol>
           <li>
             <span className="mono">1</span>
@@ -26,6 +28,7 @@ export default function Home() {
             <span>Courses have sound, so turn your volume up.</span>
           </li>
         </ol>
+        </div>
       </section>
 
       <WorkIndex />

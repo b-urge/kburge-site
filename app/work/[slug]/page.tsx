@@ -122,7 +122,7 @@ export default async function ProjectPage({ params }: Props) {
     <>
       <section className="project-head">
         <div className="crumbs mono">
-          <Link href="/">Index</Link>
+          <Link href="/#work">Work samples</Link>
           <span>/</span>
           <span>{projectNumber(slug)}</span>
           <span>{project.discipline}</span>
@@ -183,8 +183,8 @@ export default async function ProjectPage({ params }: Props) {
       )}
 
       <nav className="next" aria-label="More work">
-        <Link className="back" href="/">
-          Back to index
+        <Link className="back" href="/#work">
+          Back to work samples
         </Link>
         <Link className="forward" href={`/work/${next.slug}`}>
           <span className="mono">Next {projectNumber(next.slug)}</span>

@@ -30,7 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               Katherine Burge
             </Link>
             <nav className="site-nav" aria-label="Main">
-              <Link href="/">Index</Link>
+              <Link href="/#work">Work samples</Link>
               <Link href="/#about">About</Link>
               <a href="https://www.linkedin.com/in/kburge/">LinkedIn</a>
               <a href="https://github.com/b-urge">GitHub</a>
