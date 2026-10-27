@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { projects, projectNumber, type Project } from "@/data/projects";
+import { projects, projectNumber, sectionHeadings, type Project } from "@/data/projects";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -109,6 +109,14 @@ export default async function ProjectPage({ params }: Props) {
   const project = projects[index];
   const next = projects[(index + 1) % projects.length];
   const { view } = project;
+  const facts = (
+    [
+      ["Client", project.client],
+      ["Audience", project.audience],
+      ["My role", project.role],
+      ["Year", project.year],
+    ] as [string, string | undefined][]
+  ).filter((f): f is [string, string] => Boolean(f[1]));
 
   return (
     <>
@@ -123,6 +131,12 @@ export default async function ProjectPage({ params }: Props) {
         <p className="summary">{project.summary}</p>
         <Launch project={project} />
         <dl className="meta">
+          {facts.map(([label, value]) => (
+            <div key={label}>
+              <dt className="mono">{label}</dt>
+              <dd>{value}</dd>
+            </div>
+          ))}
           <div>
             <dt className="mono">{toolsLabel[view.kind]}</dt>
             <dd>{project.context}</dd>
@@ -143,6 +157,19 @@ export default async function ProjectPage({ params }: Props) {
       </section>
 
       <Stage project={project} />
+
+      {sectionHeadings[view.kind]
+        .filter((h) => project.sections?.[h]?.length)
+        .map((h) => (
+          <section key={h} className="split">
+            <h2 className="mono">{h}</h2>
+            <div className="prose">
+              {project.sections![h].map((para) => (
+                <p key={para}>{para}</p>
+              ))}
+            </div>
+          </section>
+        ))}
 
       {project.notes && project.notes.length > 0 && (
         <section className="split">

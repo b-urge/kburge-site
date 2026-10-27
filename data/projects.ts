@@ -13,6 +13,13 @@ export type Project = {
   /** Longer notes shown on the project page, one paragraph per entry. */
   notes?: string[];
   tools: string[];
+  /** Optional facts shown at the top of the project page. */
+  client?: string;
+  audience?: string;
+  role?: string;
+  year?: string;
+  /** Longer write-up, keyed by the headings in sectionHeadings for this project's kind. */
+  sections?: Record<string, string[]>;
   /** Lead image in /public/images, if there is one. */
   image?: string;
   /** How the work is viewed, which decides the project page's main block. */
@@ -30,6 +37,15 @@ export const disciplines: Discipline[] = [
   "Enablement",
   "Hardware & AI",
 ];
+
+/** Write-up headings for each kind of project, in page order. */
+export const sectionHeadings: Record<Project["view"]["kind"], string[]> = {
+  course: ["The problem", "Approach", "Outcome"],
+  video: ["The goal", "Approach", "Outcome"],
+  document: ["Context", "What's inside", "Outcome"],
+  app: ["Why I built it", "How it works", "What I learned"],
+  build: ["The challenge", "What we built", "My part"],
+};
 
 /** What the thing is, in plain words, from how it's viewed. */
 export function formatOf(p: Project) {
