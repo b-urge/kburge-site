@@ -10,10 +10,8 @@ export default function Home() {
 
       <section id="work" className="howto" aria-labelledby="howto-title">
         <h2 id="howto-title" className="mono">
-          Work samples
+          Browse my work samples below.
         </h2>
-        <div>
-        <p className="howto-lead">Browse my work samples below.</p>
         <ol>
           <li>
             <span className="mono">1</span>
@@ -28,7 +26,6 @@ export default function Home() {
             <span>Courses have sound, so turn your volume up.</span>
           </li>
         </ol>
-        </div>
       </section>
 
       <WorkIndex />
@@ -63,6 +60,7 @@ export default function Home() {
           <div className="elsewhere">
             <span className="mono">Elsewhere</span>
             <a href="https://github.com/b-urge/Blase-Plaza-Archives">Blase Plaza Archives</a>
+            <a href="https://www.youtube.com/@kburge">YouTube</a>
           </div>
         </div>
         <figure className="portrait">
