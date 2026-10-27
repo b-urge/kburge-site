@@ -454,3 +454,9 @@ button:focus-visible {
     font-size: 22px;
   }
 }
+
+.stage a.frame:has(> .mono) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -31,9 +31,11 @@ function Stage({ project }: { project: Project }) {
     return (
       <figure className="stage">
         <a className="frame" href={view.url} target="_blank" rel="noreferrer">
-          {project.image && (
+          {project.image ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img src={project.image} alt={`Opening screen of ${project.title}`} />
+          ) : (
+            <span className="mono">{project.title}</span>
           )}
         </a>
         <div className="actions">
@@ -52,9 +54,11 @@ function Stage({ project }: { project: Project }) {
     return (
       <figure className="stage">
         <a className="frame" href={view.url} target="_blank" rel="noreferrer">
-          {project.image && (
+          {project.image ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img src={project.image} alt={`Screenshot of ${project.title}`} />
+          ) : (
+            <span className="mono">{project.title}</span>
           )}
         </a>
         <div className="actions">
