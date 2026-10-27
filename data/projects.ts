@@ -51,7 +51,7 @@ export const projects: Project[] = [
     summary:
       "What happens between typing a term into a search engine and getting results, and how a database answers.",
     tools: ["Storyline", "Camtasia", "Adobe Audition", "Photoshop"],
-    // image: "/images/what-is-search.jpg",
+    image: "/images/what-is-search.jpg",
     view: {
       kind: "course",
       url: "https://katiebucket.s3.amazonaws.com/What+is+Search+Remix+2/story.html",
@@ -66,7 +66,7 @@ export const projects: Project[] = [
       "How to create an expense report in Integra, the International Rescue Committee's ERP system built on Microsoft Dynamics 365.",
     notes: ["Built on an existing course template."],
     tools: ["Storyline", "Photoshop"],
-    // image: "/images/expense-report.jpg",
+    image: "/images/expense-report.jpg",
     view: {
       kind: "course",
       url: "https://360.articulate.com/review/content/983e47a4-5a5c-4705-9a08-e121e7af6380/review",
@@ -81,7 +81,7 @@ export const projects: Project[] = [
       "A walkthrough of Sailthru's Lifecycle Optimizer: the interface, and how to build automated, individualized messaging flows across channels.",
     notes: ["I narrated the audio."],
     tools: ["Rise 360", "Camtasia", "Adobe Audition"],
-    // image: "/images/lifecycle-optimizer.jpg",
+    image: "/images/lifecycle-optimizer.jpg",
     view: {
       kind: "course",
       url: "https://360.articulate.com/review/content/d13ce5d8-d85d-4478-86b0-148ea76444ac/review",
@@ -95,7 +95,7 @@ export const projects: Project[] = [
     summary:
       "Tune across the radio spectrum and see what lives at each frequency, from broadcast and voice to data and amateur radio, with plain explanations of how those signals travel.",
     tools: ["React", "v0"],
-    // image: "/images/the-listener.jpg",
+    image: "/images/the-listener.jpg",
     view: { kind: "app", url: "https://v0-the-listener-tool.vercel.app/" },
   },
   {
@@ -107,7 +107,7 @@ export const projects: Project[] = [
       "Amateur radio activity in real time, shown through motion, color, and abstract forms instead of call signs and logs, so newcomers can see bands open, go quiet, and connect distant places.",
     notes: ["Start with the Guide tab."],
     tools: ["React", "v0"],
-    // image: "/images/open-bands.jpg",
+    image: "/images/open-bands.jpg",
     view: { kind: "app", url: "https://v0-open-bands-visualization.vercel.app/" },
   },
   {
@@ -119,7 +119,7 @@ export const projects: Project[] = [
       "A course on using an IoT platform's custom APIs inside Node-RED, the visual programming tool.",
     notes: ["I narrated the audio. The course template already existed."],
     tools: ["Storyline", "Camtasia", "Adobe Audition", "Node-RED"],
-    // image: "/images/node-red.jpg",
+    image: "/images/node-red.jpg",
     view: { kind: "course", url: "https://katiebucket.s3.amazonaws.com/story_html5.html" },
   },
   {
@@ -130,7 +130,7 @@ export const projects: Project[] = [
     summary:
       "How modern software controls radio hardware, explained through a web API you can try, connecting traditional radio with software culture.",
     tools: ["React", "v0", "API"],
-    // image: "/images/hamlib-api.jpg",
+    image: "/images/hamlib-api.jpg",
     view: { kind: "app", url: "https://v0-hamlib-api-documentation.vercel.app/" },
   },
   {
@@ -142,7 +142,7 @@ export const projects: Project[] = [
       "Specification of the REST APIs for creating, updating, and deleting data subscriptions on the Ayla IoT platform.",
     notes: ["Graphics made in Photoshop."],
     tools: ["Technical writing", "API", "Photoshop"],
-    // image: "/images/dss-api.jpg",
+    image: "/images/dss-api.jpg",
     view: { kind: "document", driveId: "1SCvlUaWBbvxvFCLYrzVxFDIY_WnTyFp2" },
   },
   {
@@ -156,7 +156,7 @@ export const projects: Project[] = [
       "AI writing tools helped with clarity edits. The design decisions are my own.",
     ],
     tools: ["Performance consulting", "Presentation"],
-    // image: "/images/msp-sales.jpg",
+    image: "/images/msp-sales.jpg",
     view: { kind: "document", driveId: "13N1ApzhBl9uLXFByfOVPWIE_VkNbYY4p" },
   },
   {
@@ -167,7 +167,7 @@ export const projects: Project[] = [
     summary:
       "A complex enterprise IoT platform turned into a clear story for technical and executive viewers: how connected products and cloud infrastructure support business growth.",
     tools: ["Premiere Pro", "After Effects", "Photoshop", "Adobe Audition"],
-    image: "https://i.ytimg.com/vi/qmMH4I_RVno/hqdefault.jpg",
+    image: "/images/ayla-overview.jpg",
     view: { kind: "video", youtubeId: "qmMH4I_RVno" },
   },
   {
@@ -179,7 +179,7 @@ export const projects: Project[] = [
       "How an IoT platform helps industrial companies with connected devices cut the time and cost of sending technicians into the field.",
     notes: ["I narrated the audio."],
     tools: ["After Effects", "Adobe Audition", "Photoshop"],
-    image: "https://i.ytimg.com/vi/tf02hk0VtZw/hqdefault.jpg",
+    image: "/images/truck-rolls.jpg",
     view: { kind: "video", youtubeId: "tf02hk0VtZw" },
   },
   {
