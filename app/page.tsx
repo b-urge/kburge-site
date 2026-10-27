@@ -15,7 +15,7 @@ export default function Home() {
         <ol>
           <li>
             <span className="mono">1</span>
-            <span>Pick the kind of role you&rsquo;re hiring for, or browse everything.</span>
+            <span>Filter by type of work, or browse everything.</span>
           </li>
           <li>
             <span className="mono">2</span>
