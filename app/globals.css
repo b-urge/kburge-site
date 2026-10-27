@@ -241,7 +241,6 @@ button:focus-visible {
 .portrait {
   margin: 0;
   align-self: start;
-  background: #000;
 }
 .portrait img {
   display: block;
