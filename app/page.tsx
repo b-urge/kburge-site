@@ -1,3 +1,4 @@
+import { HiringDoors } from "@/components/HiringDoors";
 import { WorkIndex } from "@/components/WorkIndex";
 
 export default function Home() {
@@ -29,6 +30,8 @@ export default function Home() {
       </section>
 
       <WorkIndex />
+
+      <HiringDoors />
 
       <section id="about" className="about" aria-labelledby="about-title">
         <h2 id="about-title" className="mono">
