@@ -24,49 +24,38 @@ const toolsLabel: Record<Project["view"]["kind"], string> = {
   build: "Event",
 };
 
+function Launch({ project }: { project: Project }) {
+  const { view } = project;
+  if (view.kind !== "course" && view.kind !== "app") return null;
+  const course = view.kind === "course";
+  return (
+    <div className="actions">
+      <a className="button" href={view.url} target="_blank" rel="noreferrer">
+        {course ? "Launch the course" : "Open the app"} <span aria-hidden="true">↗</span>
+      </a>
+      <span className="mono">
+        {course
+          ? "Opens in a new tab. Sound on. Use the player\u2019s Next button. Best on a laptop."
+          : "Opens in a new tab."}
+      </span>
+    </div>
+  );
+}
+
 function Stage({ project }: { project: Project }) {
   const { view } = project;
 
-  if (view.kind === "course") {
+  if (view.kind === "course" || view.kind === "app") {
+    if (!project.image) return null;
     return (
       <figure className="stage">
-        <a className="frame" href={view.url} target="_blank" rel="noreferrer">
-          {project.image ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img src={project.image} alt={`Opening screen of ${project.title}`} />
-          ) : (
-            <span className="mono">{project.title}</span>
-          )}
+        <a className="shot" href={view.url} target="_blank" rel="noreferrer">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={project.image}
+            alt={`${view.kind === "course" ? "Opening screen" : "Screenshot"} of ${project.title}`}
+          />
         </a>
-        <div className="actions">
-          <a className="button" href={view.url} target="_blank" rel="noreferrer">
-            Launch the course <span aria-hidden="true">↗</span>
-          </a>
-          <span className="mono">
-            Opens in a new tab. Sound on. Use the player&rsquo;s Next button. Best on a laptop.
-          </span>
-        </div>
-      </figure>
-    );
-  }
-
-  if (view.kind === "app") {
-    return (
-      <figure className="stage">
-        <a className="frame" href={view.url} target="_blank" rel="noreferrer">
-          {project.image ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img src={project.image} alt={`Screenshot of ${project.title}`} />
-          ) : (
-            <span className="mono">{project.title}</span>
-          )}
-        </a>
-        <div className="actions">
-          <a className="button" href={view.url} target="_blank" rel="noreferrer">
-            Open the app <span aria-hidden="true">↗</span>
-          </a>
-          <span className="mono">Opens in a new tab.</span>
-        </div>
       </figure>
     );
   }
@@ -132,6 +121,7 @@ export default async function ProjectPage({ params }: Props) {
         </div>
         <h1>{project.title}</h1>
         <p className="summary">{project.summary}</p>
+        <Launch project={project} />
         <dl className="meta">
           <div>
             <dt className="mono">{toolsLabel[view.kind]}</dt>
