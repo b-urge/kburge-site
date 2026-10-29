@@ -203,7 +203,6 @@ button:focus-visible {
 }
 .plate {
   aspect-ratio: 4 / 3;
-  background: var(--plate);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -214,6 +213,10 @@ button:focus-visible {
   height: 100%;
   object-fit: contain;
   filter: grayscale(1) brightness(0.8) contrast(1.08);
+  transition: filter 0.3s;
+}
+.preview.is-live .plate img {
+  filter: grayscale(0.55) brightness(0.88) contrast(1.05);
   display: block;
 }
 .preview-meta {

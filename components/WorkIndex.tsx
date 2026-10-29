@@ -62,7 +62,7 @@ export function WorkIndex() {
       </section>
 
       {current && (
-        <aside className="preview" aria-hidden="true">
+        <aside className={`preview${hovered ? " is-live" : ""}`} aria-hidden="true">
           <div className="plate">
             {current.image ? (
               // eslint-disable-next-line @next/next/no-img-element
